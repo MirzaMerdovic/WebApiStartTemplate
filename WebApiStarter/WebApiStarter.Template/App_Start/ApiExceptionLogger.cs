@@ -1,4 +1,6 @@
 ﻿using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Web.Http.ExceptionHandling;
 using WebApiStarter.Template.Models;
 
@@ -9,17 +11,23 @@ namespace WebApiStarter.Template.App_Start
     /// </summary>
     public class ApiExceptionLogger : ExceptionLogger
     {
-        public override void Log(ExceptionLoggerContext context)
+        /// <summary>
+        /// Overrides <see cref="ExceptionLogger.LogAsync"/> method with custom logger implementations.
+        /// </summary>
+        /// <param name="context">Instance of <see cref="ExceptionLoggerContext"/>.</param>
+        /// <param name="cancellationToken">Cancellation token.</param>
+        /// <returns></returns>
+        public override async Task LogAsync(ExceptionLoggerContext context, CancellationToken cancellationToken)
         {
             // Use a logger of your choice to log a request.
-            var request = CreateRequest(context.Request);
+            var request = await CreateRequest(context.Request);
         }
 
-        private static HttpRequestModel CreateRequest(HttpRequestMessage message)
+        private static async Task<HttpRequestModel> CreateRequest(HttpRequestMessage message)
         {
             var request = new HttpRequestModel
             {
-                Body = message.Content.ReadAsStringAsync().Result,
+                Body = await message.Content.ReadAsStringAsync(),
                 Method = message.Method.Method,
                 Scheme = message.RequestUri.Scheme,
                 Host = message.RequestUri.Host,

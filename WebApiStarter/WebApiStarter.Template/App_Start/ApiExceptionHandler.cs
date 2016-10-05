@@ -12,6 +12,10 @@ namespace WebApiStarter.Template.App_Start
     /// </summary>
     public class ApiExceptionHandler : ExceptionHandler
     {
+        /// <summary>
+        /// Overrides <see cref="ExceptionHandler.Handle"/> method with code that sets friendly error message to be shown in browser.
+        /// </summary>
+        /// <param name="context">Instance fo <see cref="ExceptionHandlerContext"/>.</param>
         public override void Handle(ExceptionHandlerContext context)
         {
             var correlationId = Guid.NewGuid();

@@ -136,6 +136,7 @@
     <Compile Include="App_Start\ServiceConfig.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Models\ErrorInfoModel.cs" />
     <Compile Include="Models\HttpRequestModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

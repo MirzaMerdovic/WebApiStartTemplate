@@ -9,12 +9,12 @@ using WebApiStarter.Template.App_Start;
 namespace WebApiStarter.Template
 {
     /// <summary>
-    /// OWIN Startup class.
+    /// Represents the entry point into an application.
     /// </summary>
     public class Startup
     {
         /// <summary>
-        /// The configuration.
+        /// Specifies how the ASP.NET application will respond to individual HTTP request.
         /// </summary>
         /// <param name="app">Instance of <see cref="IAppBuilder"/>.</param>
         public void Configuration(IAppBuilder app)

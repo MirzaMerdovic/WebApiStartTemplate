@@ -1,15 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Web.Http;
+﻿using System.Web.Http;
 
 namespace WebApiStarter.Template.Controllers
 {
     public class HomeController : ApiController
     {
         [HttpGet]
-        [Route("values")]
-        public IHttpActionResult Get()
+        [Route("")]
+        public string Index()
         {
-            return Ok(new List<int> {1, 2, 3});
+            return "Web API Started successfully";
         }
     }
 }
