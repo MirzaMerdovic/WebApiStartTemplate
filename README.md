@@ -1,6 +1,6 @@
 Web API Visual Studio Template.
 
-VS template foe Web API with OWIN projects. 
+VS template for Web API with OWIN projects. 
 
 It is created from empty Web API project template and it includes:
  - CORS configuration
