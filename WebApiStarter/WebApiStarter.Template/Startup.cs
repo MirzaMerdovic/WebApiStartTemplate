@@ -3,6 +3,7 @@ using System.Web.Http;
 using Microsoft.Owin;
 using Owin;
 using WebApiStarter.Template.App_Start;
+using Compusight.MoveDesk.UserManagementApi.Configuration;
 
 [assembly: OwinStartup(typeof(WebApiStarter.Template.Startup))]
 
@@ -30,6 +31,7 @@ namespace WebApiStarter.Template
             FormatterConfig.Configure(configuration);
             RouteConfig.Configure(configuration);
             ServiceConfig.Configure(configuration);
+            SwaggerConfig.Configure(configuration);
 
             app.UseWebApi(configuration);
         }

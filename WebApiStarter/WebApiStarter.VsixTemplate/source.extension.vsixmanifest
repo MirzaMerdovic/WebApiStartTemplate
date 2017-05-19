@@ -17,4 +17,8 @@ More inf: https://github.com/MirzaMerdovic/WebApiStartTemplate/wikiWe</Descripti
   <Assets>
     <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" d:TargetPath="ProjectTemplates\OWIN Web API Starter Template.zip" />
   </Assets>
+  <Prerequisites>
+    <Prerequisite Id="Microsoft.VisualStudio.Component.Roslyn.LanguageServices" Version="[15.0.26208.0,16.0)" DisplayName="C# and Visual Basic" />
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0.26208.0,16.0)" DisplayName="Visual Studio core editor" />
+  </Prerequisites>
 </PackageManifest>
