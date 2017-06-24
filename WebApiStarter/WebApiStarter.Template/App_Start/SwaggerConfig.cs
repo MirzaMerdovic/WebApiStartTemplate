@@ -1,9 +1,5 @@
-﻿using System;
-using System.CodeDom;
-using System.Web.Http;
-using System.Xml.XPath;
+﻿using System.Web.Http;
 using Swashbuckle.Application;
-using System.Reflection;
 
 namespace Compusight.MoveDesk.UserManagementApi.Configuration
 {
@@ -23,17 +19,10 @@ namespace Compusight.MoveDesk.UserManagementApi.Configuration
                 {
                     c.SingleApiVersion("v1", "My.Api");
                     c.PrettyPrint();
-                    c.IncludeXmlComments(() => new XPathDocument(GetXmlDocumentationPath()));
+                    // Include if you want to setup XML comments.
+                    //c.IncludeXmlComments(() => new XPathDocument(GetXmlDocumentationPath()));
                 })
                 .EnableSwaggerUi(c => { });
-        }
-
-        private static string GetXmlDocumentationPath()
-        {
-            var path =
-                string.Format("{0}bin\\{1}.xml", AppDomain.CurrentDomain.BaseDirectory, Assembly.GetExecutingAssembly().GetName().Name);
-
-            return path;
         }
     }
 }
