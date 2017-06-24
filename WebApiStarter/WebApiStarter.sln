@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiStarter.Template", "WebApiStarter.Template\WebApiStarter.Template.csproj", "{24DF2024-41A1-49C9-B2D2-96F0819DF41C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiStarter.Vsix", "WebApiStarter.Vsix\WebApiStarter.Vsix.csproj", "{6AA274CF-A5E1-4414-AA57-6B2DDDD9DD6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiStarter.Template.Vsix", "WebApiStarter.Template.Vsix\WebApiStarter.Template.Vsix.csproj", "{0BDA7CE6-812F-4302-A218-8F046B4F08DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{24DF2024-41A1-49C9-B2D2-96F0819DF41C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24DF2024-41A1-49C9-B2D2-96F0819DF41C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24DF2024-41A1-49C9-B2D2-96F0819DF41C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6AA274CF-A5E1-4414-AA57-6B2DDDD9DD6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6AA274CF-A5E1-4414-AA57-6B2DDDD9DD6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6AA274CF-A5E1-4414-AA57-6B2DDDD9DD6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6AA274CF-A5E1-4414-AA57-6B2DDDD9DD6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BDA7CE6-812F-4302-A218-8F046B4F08DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BDA7CE6-812F-4302-A218-8F046B4F08DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BDA7CE6-812F-4302-A218-8F046B4F08DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BDA7CE6-812F-4302-A218-8F046B4F08DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
