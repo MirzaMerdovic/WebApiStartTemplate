@@ -1,4 +1,5 @@
 ﻿using Swashbuckle.Application;
+using System;
 using System.Web.Http;
 
 namespace WebApiStarter.Template.App_Start
@@ -6,7 +7,7 @@ namespace WebApiStarter.Template.App_Start
     /// <summary>
     /// Represents route configuration.
     /// </summary>
-    public class RouteConfig
+    public static class RouteConfig
     {
         /// <summary>
         /// Configures Web API routes.
@@ -14,14 +15,20 @@ namespace WebApiStarter.Template.App_Start
         /// <param name="configuration"></param>
         public static void Configure(HttpConfiguration configuration)
         {
+            if (configuration == null)
+                throw new ArgumentNullException(nameof(configuration));
+
             configuration.MapHttpAttributeRoutes();
 
-            configuration.Routes.MapHttpRoute(
-                name: "swagger_root",
-                routeTemplate: "",
-                defaults: null,
-                constraints: null,
-                handler: new RedirectHandler(message => message.RequestUri.ToString(), "swagger"));
+            using (var handler = new RedirectHandler(m => m.RequestUri.ToString(), "swagger"))
+            {
+                configuration.Routes.MapHttpRoute(
+                    name: "swagger_root",
+                    routeTemplate: "",
+                    defaults: null,
+                    constraints: null,
+                    handler: handler);
+            }      
         }
     }
 }

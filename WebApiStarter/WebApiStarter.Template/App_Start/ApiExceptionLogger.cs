@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http.ExceptionHandling;
@@ -19,15 +20,15 @@ namespace WebApiStarter.Template.App_Start
         /// <returns></returns>
         public override async Task LogAsync(ExceptionLoggerContext context, CancellationToken cancellationToken)
         {
-            // Use a logger of your choice to log a request.
             var request = await CreateRequest(context.Request);
+            // Use a logger of your choice to log a request.
         }
 
         private static async Task<HttpRequestModel> CreateRequest(HttpRequestMessage message)
         {
             var request = new HttpRequestModel
             {
-                Body = await message.Content.ReadAsStringAsync(),
+                Body = await ReadContent(message.Content).ConfigureAwait(false),
                 Method = message.Method.Method,
                 Scheme = message.RequestUri.Scheme,
                 Host = message.RequestUri.Host,
@@ -38,6 +39,24 @@ namespace WebApiStarter.Template.App_Start
             };
 
             return request;
+        }
+
+        private static async Task<string> ReadContent(HttpContent content)
+        {
+            using (content)
+            {
+                string body;
+                try
+                {
+                    body = await content.ReadAsStringAsync().ConfigureAwait(false);
+                }
+                catch (Exception e)
+                {
+                    body = $"Failed to read body. Error: {e}";
+                }
+
+                return body;
+            }
         }
     }
 }

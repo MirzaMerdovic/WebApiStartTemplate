@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Cors;
 using Microsoft.Owin.Cors;
@@ -8,21 +9,16 @@ namespace WebApiStarter.Template.App_Start
     /// <summary>
     /// Represents CORS configuration.
     /// </summary>
-    public class CorsConfig
+    public static class CorsConfig
     {
-        /// <summary>
-        /// Instance of <see cref="CorsOptions"/> that is set to allow all by default.
-        /// </summary>
-        public static CorsOptions Options = CorsOptions.AllowAll;
-
         /// <summary>
         /// Initializes and configures <see cref="CorsOptions"/> instance.
         /// </summary>
         /// <param name="origins">String of allowed origins delimited by: ';'</param>
-        public static void ConfigureCors(string origins)
+        public static CorsOptions ConfigureCors(string origins)
         {
             if (string.IsNullOrWhiteSpace(origins))
-                return;
+                return CorsOptions.AllowAll;
 
             var corsPolicy = new CorsPolicy
             {
@@ -30,12 +26,16 @@ namespace WebApiStarter.Template.App_Start
                 AllowAnyHeader = true
             };
 
-            corsPolicy.Origins.ToList().AddRange(origins.Split(';'));
+            // StringSplitOptions.RemoveEmptyEntries doesn't remove whitespaces.
+            origins.Split(';')
+                .Where(x => !string.IsNullOrWhiteSpace(x))
+                .ToList()
+                .ForEach(origin => corsPolicy.Origins.Add(origin));
 
             if (!corsPolicy.Origins.Any())
-                return;
+                return CorsOptions.AllowAll;
 
-            Options = new CorsOptions
+            return new CorsOptions
             {
                 PolicyProvider = new CorsPolicyProvider
                 {

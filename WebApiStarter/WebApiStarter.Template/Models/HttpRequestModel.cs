@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace WebApiStarter.Template.Models
 {
@@ -38,11 +39,15 @@ namespace WebApiStarter.Template.Models
 
         public static string ConvertToString(Stream stream)
         {
+            if (stream == null)
+                throw new ArgumentNullException(nameof(stream));
+
             try
             {
                 stream.Position = 0;
                 using (var reader = new StreamReader(stream))
                 {
+                    stream = null;
                     var serializedStream = reader.ReadToEnd();
 
                     return serializedStream;

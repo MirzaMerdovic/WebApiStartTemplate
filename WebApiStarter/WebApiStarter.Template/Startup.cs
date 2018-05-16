@@ -3,7 +3,6 @@ using System.Web.Http;
 using Microsoft.Owin;
 using Owin;
 using WebApiStarter.Template.App_Start;
-using Compusight.MoveDesk.UserManagementApi.Configuration;
 
 [assembly: OwinStartup(typeof(WebApiStarter.Template.Startup))]
 
@@ -20,20 +19,20 @@ namespace WebApiStarter.Template
         /// <param name="app">Instance of <see cref="IAppBuilder"/>.</param>
         public void Configuration(IAppBuilder app)
         {
-            CorsConfig.ConfigureCors(ConfigurationManager.AppSettings["cors"]);
-            app.UseCors(CorsConfig.Options);
+            var corsOptions = CorsConfig.ConfigureCors(ConfigurationManager.AppSettings["cors"]);
+            app.UseCors(corsOptions);
 
             var configuration = new HttpConfiguration();
-
             AutofacConfig.Configure(configuration);
             app.UseAutofacMiddleware(AutofacConfig.Container);
 
             FormatterConfig.Configure(configuration);
             RouteConfig.Configure(configuration);
             ServiceConfig.Configure(configuration);
-            SwaggerConfig.Configure(configuration);
 
             app.UseWebApi(configuration);
+
+            SwaggerConfig.Configure(configuration);
         }
     }
 }

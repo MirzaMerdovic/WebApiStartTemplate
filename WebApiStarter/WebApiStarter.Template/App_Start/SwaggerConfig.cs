@@ -1,12 +1,12 @@
 ﻿using System.Web.Http;
 using Swashbuckle.Application;
 
-namespace Compusight.MoveDesk.UserManagementApi.Configuration
+namespace WebApiStarter.Template
 {
     /// <summary>
     /// Represent Swagger configuration.
     /// </summary>
-    public class SwaggerConfig
+    public static class SwaggerConfig
     {
         /// <summary>
         /// Configures Swagger API 

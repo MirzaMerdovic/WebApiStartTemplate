@@ -18,6 +18,9 @@ namespace WebApiStarter.Template.App_Start
         /// <param name="context">Instance fo <see cref="ExceptionHandlerContext"/>.</param>
         public override void Handle(ExceptionHandlerContext context)
         {
+            if(context == null)
+                throw new ArgumentNullException(nameof(context));
+
             var correlationId = Guid.NewGuid();
 
             var metadata = new ErrorInfoModel
