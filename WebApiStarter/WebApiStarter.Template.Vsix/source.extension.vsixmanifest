@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="WebApiStarterTemplate-1" Version="1.1" Language="en-US" Publisher="Mirza Merdovic" />
+        <Identity Id="WebApiStarterTemplate-B25FF44F-EE77-429B-8A52-947DA990169D" Version="1.1" Language="en-US" Publisher="Mirza Merdovic" />
         <DisplayName>WebApi Starter Template</DisplayName>
         <Description xml:space="preserve">Web API + OWIN + Autofac + Swagger VS project template.
 More info: https://github.com/MirzaMerdovic/WebApiStartTemplate/wikiWe</Description>
