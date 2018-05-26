@@ -10,7 +10,7 @@ namespace WebApiStarter.Template.App_Start
     public static class ServiceConfig
     {
         /// <summary>
-        /// COnfigures custom implementations for: <see cref="IExceptionHandler"/> and <see cref="IExceptionLogger"/>.
+        /// Configures custom implementations for: <see cref="IExceptionHandler"/> and <see cref="IExceptionLogger"/>.
         /// </summary>
         /// <param name="configuration"></param>
         public static void Configure(HttpConfiguration configuration)

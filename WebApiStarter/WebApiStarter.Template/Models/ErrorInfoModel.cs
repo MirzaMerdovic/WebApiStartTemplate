@@ -23,8 +23,8 @@ namespace WebApiStarter.Template.Models
         public Uri RequestUri { get; set; }
 
         /// <summary>
-        /// <see cref="Guid"/> value that represents correlation identifier that can be used for tracking purposes.
+        /// Gets or sets value that represents correlation identifier that can be used for tracking purposes.
         /// </summary>
-        public Guid ErrorId { get; set; }
+        public string ErrorId { get; set; }
     }
 }

@@ -8,6 +8,8 @@ namespace WebApiStarter.Template.Models
     /// </summary>
     public class HttpRequestModel
     {
+        public string CorrelationId { get; internal set; }
+
         public string Method { get; set; }
 
         public string Host { get; set; }
