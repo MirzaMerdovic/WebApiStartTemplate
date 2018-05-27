@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="WebApiStarterTemplate-1" Version="1.1" Language="en-US" Publisher="Mirza Merdovic" />
+        <Identity Id="WebApiStarterTemplate-1" Version="1.1.1" Language="en-US" Publisher="Mirza Merdovic" />
         <DisplayName>WebApi Starter Template</DisplayName>
-        <Description xml:space="preserve">Web API + OWIN + Autofac + Swagger VS project template.
-More info: https://github.com/MirzaMerdovic/WebApiStartTemplate/wikiWe</Description>
+        <Description xml:space="preserve">Visual Studio template that provides main functionality that many of us implement while creating new Web API using OWIN.</Description>
         <MoreInfo>https://github.com/MirzaMerdovic/WebApiStartTemplate</MoreInfo>
+        <GettingStartedGuide>https://github.com/MirzaMerdovic/WebApiStartTemplate/wiki</GettingStartedGuide>
+        <ReleaseNotes>https://github.com/MirzaMerdovic/WebApiStartTemplate/blob/master/release-notes.md</ReleaseNotes>
         <Tags>WebAPI, OWIN, Autofac, Swagger</Tags>
     </Metadata>
     <Installation>
