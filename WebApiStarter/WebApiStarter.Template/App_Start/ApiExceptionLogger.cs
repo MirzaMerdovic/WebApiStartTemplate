@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http.ExceptionHandling;
-using WebApiStarter.Template.Models;
 
 namespace WebApiStarter.Template.App_Start
 {
@@ -14,6 +12,8 @@ namespace WebApiStarter.Template.App_Start
     /// </summary>
     public class ApiExceptionLogger : ExceptionLogger
     {
+        private const string CorrelationIdHeaderName = "CorrelationId";
+
         /// <summary>
         /// Overrides <see cref="ExceptionLogger.LogAsync"/> method with custom logger implementations.
         /// </summary>
@@ -30,20 +30,26 @@ namespace WebApiStarter.Template.App_Start
             {
                 var correlationId = Guid.NewGuid().ToString();
 
-                if (!message.Headers.TryGetValues("CorrelationId", out var correlations))
-                    message.Headers.Add("CorrelationId", correlationId);
+                if (!message.Headers.TryGetValues(CorrelationIdHeaderName, out var correlations))
+                {
+                    message.Headers.Add(CorrelationIdHeaderName, correlationId);
+                }
                 else if (Guid.TryParse(correlations.First(), out var id))
-                    message.Headers.Add("CorrelationId", id.ToString());
+                {
+                    message.Headers.Add(CorrelationIdHeaderName, id.ToString());
+                }
                 else
-                    message.Headers.Add("CorrelationId", correlationId);
+                {
+                    message.Headers.Add(CorrelationIdHeaderName, correlationId);
+                }
             }
         }
 
-        private static async Task<HttpRequestModel> CreateRequest(HttpRequestMessage message)
+        private static async Task<dynamic> CreateRequest(HttpRequestMessage message)
         {
-            var request = new HttpRequestModel
+            var request = new
             {
-                CorrelationId = message.Headers.GetValues("CorrelationId").First(),
+                CorrelationId = message.Headers.GetValues(CorrelationIdHeaderName).First(),
                 Body = await ReadContent(message.Content).ConfigureAwait(false),
                 Method = message.Method.Method,
                 Scheme = message.RequestUri.Scheme,

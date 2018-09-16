@@ -2,10 +2,8 @@
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Web.Http.ExceptionHandling;
 using System.Web.Http.Results;
-using WebApiStarter.Template.Models;
 
 namespace WebApiStarter.Template.App_Start
 {
@@ -20,8 +18,7 @@ namespace WebApiStarter.Template.App_Start
         /// <param name="context">Instance of <see cref="ExceptionHandlerContext"/>.</param>
         public override void Handle(ExceptionHandlerContext context)
         {
-            if (context == null)
-                throw new ArgumentNullException(nameof(context));
+            context = context ?? throw new ArgumentNullException(nameof(context));
 
             var correlationId = context.Request.Headers.GetValues("CorrelationId").First();
 

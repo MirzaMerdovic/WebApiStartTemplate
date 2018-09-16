@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="WebApiStarterTemplate-1" Version="1.1.2" Language="en-US" Publisher="Mirza Merdovic" />
+        <Identity Id="WebApiStarterTemplate-1" Version="1.2.0" Language="en-US" Publisher="Mirza Merdovic" />
         <DisplayName>WebApi Starter Template</DisplayName>
         <Description xml:space="preserve">Visual Studio template that provides main functionality that many of us implement while creating new Web API using OWIN.</Description>
         <MoreInfo>https://github.com/MirzaMerdovic/WebApiStartTemplate</MoreInfo>

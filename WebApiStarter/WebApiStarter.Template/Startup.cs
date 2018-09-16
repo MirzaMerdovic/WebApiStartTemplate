@@ -5,7 +5,6 @@ using Owin;
 using WebApiStarter.Template.App_Start;
 
 [assembly: OwinStartup(typeof(WebApiStarter.Template.Startup))]
-
 namespace WebApiStarter.Template
 {
     /// <summary>
@@ -19,20 +18,14 @@ namespace WebApiStarter.Template
         /// <param name="app">Instance of <see cref="IAppBuilder"/>.</param>
         public void Configuration(IAppBuilder app)
         {
-            var corsOptions = CorsConfig.ConfigureCors(ConfigurationManager.AppSettings["cors"]);
-            app.UseCors(corsOptions);
-
-            var configuration = new HttpConfiguration();
-            AutofacConfig.Configure(configuration);
-            app.UseAutofacMiddleware(AutofacConfig.Container);
-
-            FormatterConfig.Configure(configuration);
-            RouteConfig.Configure(configuration);
-            ServiceConfig.Configure(configuration);
-
-            app.UseWebApi(configuration);
-
-            SwaggerConfig.Configure(configuration);
+            new ApiConfig(app)
+                .ConfigureCorsMiddleware(ConfigurationManager.AppSettings["cors"])
+                .ConfigureAufacMiddleware()
+                .ConfigureFormatters()
+                .ConfigureRoutes()
+                .ConfigureExceptionHandling()
+                .ConfigureSwagger()
+                .UseWebApi();
         }
     }
 }

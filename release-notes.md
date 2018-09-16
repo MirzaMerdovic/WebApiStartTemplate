@@ -10,3 +10,14 @@
 
 ## v1.1.2 - May 31st, 2018
 	- Added log for VSIX template.
+
+## v1.2.0 - September 15th, 2018
+	- Upgraded following packages:
+		- Autofac.WebApi2 4.2.0
+		- Microsoft.CodeDom.Providers.DotNetCompilerPlatform - 2.0.1
+		- Microsoft.Net.Compilers 2.9.0
+		- Swashbuckle 5.6.0
+		- Swashbuckle.Core 5.6.0
+	- Reinstalled nuget packages so that all target .Net 4.7.1
+	- Implemented request/response predefined examples for Swagger using Swashbuckle.Examples
+	- Setup XML documentation usage for Swagger.
