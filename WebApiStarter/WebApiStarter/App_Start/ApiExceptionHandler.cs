@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Web.Http.ExceptionHandling;
 using System.Web.Http.Results;
 
-namespace $safeprojectname$.App_Start
+namespace WebApiStarter.App_Start
 {
     /// <summary>
     /// Represents implementation of <see cref="ExceptionHandler"/>.

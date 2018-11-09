@@ -17,9 +17,9 @@ using Newtonsoft.Json.Serialization;
 using Owin;
 using Swashbuckle.Application;
 using Swashbuckle.Examples;
-using $safeprojectname$.Controllers;
+using WebApiStarter.Controllers;
 
-namespace $safeprojectname$.App_Start
+namespace WebApiStarter.App_Start
 {
     /// <summary>
     /// Represents a class that encapsulates several Web Api configurations: CORS, routing, formatters, exception handling, dependency injection and Swagger
@@ -145,13 +145,13 @@ namespace $safeprojectname$.App_Start
                 {
                     c.SingleApiVersion("v1", GetType().Assembly.GetName().Name);
                     c.PrettyPrint();
-                    c.IncludeXmlComments(() => new XPathDocument($@"{AppContext.BaseDirectory}\bin\WebApiDocumentation.xml"));
+                    c.IncludeXmlComments(() => new XPathDocument(GetXmlDocumentationPath()));
                     c.RootUrl(req => new Uri(req.RequestUri, HttpContext.Current.Request.ApplicationPath ?? string.Empty).ToString());
+
                     // In accordance with the built in JsonSerializer, Swashbuckle will, by default, describe enums as integers.
                     // You can change the serializer behavior by configuring the StringToEnumConverter globally or for a given
                     // enum type. Swashbuckle will honor this change out-of-the-box. However, if you use a different
                     // approach to serialize enums as strings, you can also force Swashbuckle to describe them as strings.
-                    //
                     c.DescribeAllEnumsAsStrings();
                     c.OperationFilter<ExamplesOperationFilter>();
                     c.OperationFilter<DescriptionOperationFilter>();
@@ -159,6 +159,13 @@ namespace $safeprojectname$.App_Start
                 .EnableSwaggerUi(c => { });
 
             return this;
+
+            string GetXmlDocumentationPath()
+            {
+                var path = $@"{AppContext.BaseDirectory}\bin\{GetType().Assembly.GetName().Name}.xml";
+
+                return path;
+            }
         }
 
         public void UseWebApi()

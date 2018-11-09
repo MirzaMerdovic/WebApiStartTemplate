@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiStarter.Template", "WebApiStarter.Template\WebApiStarter.Template.csproj", "{24DF2024-41A1-49C9-B2D2-96F0819DF41C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiStarter", "WebApiStarter\WebApiStarter.csproj", "{24DF2024-41A1-49C9-B2D2-96F0819DF41C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiStarter.Template.Vsix", "WebApiStarter.Template.Vsix\WebApiStarter.Template.Vsix.csproj", "{0BDA7CE6-812F-4302-A218-8F046B4F08DF}"
 EndProject
@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 	ProjectSection(SolutionItems) = preProject
 		Documents\HowToFindTemplate.png = Documents\HowToFindTemplate.png
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiStarter.Template", "WebApiStarter.Template\WebApiStarter.Template.csproj", "{0364047D-1E5C-4514-BFD4-360749EC32AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{0BDA7CE6-812F-4302-A218-8F046B4F08DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BDA7CE6-812F-4302-A218-8F046B4F08DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BDA7CE6-812F-4302-A218-8F046B4F08DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0364047D-1E5C-4514-BFD4-360749EC32AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0364047D-1E5C-4514-BFD4-360749EC32AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0364047D-1E5C-4514-BFD4-360749EC32AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0364047D-1E5C-4514-BFD4-360749EC32AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
