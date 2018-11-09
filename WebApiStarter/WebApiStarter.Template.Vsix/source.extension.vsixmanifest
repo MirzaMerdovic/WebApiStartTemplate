@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="WebApiStarterTemplate-1" Version="1.2.0" Language="en-US" Publisher="Mirza Merdovic" />
+        <Identity Id="WebApiStarterTemplate-1" Version="1.3.0" Language="en-US" Publisher="Mirza Merdovic" />
         <DisplayName>WebApi Starter Template</DisplayName>
         <Description xml:space="preserve">Visual Studio template that provides main functionality that many of us implement while creating new Web API using OWIN.</Description>
         <MoreInfo>https://github.com/MirzaMerdovic/WebApiStartTemplate</MoreInfo>
         <GettingStartedGuide>https://github.com/MirzaMerdovic/WebApiStartTemplate/wiki</GettingStartedGuide>
         <ReleaseNotes>https://github.com/MirzaMerdovic/WebApiStartTemplate/blob/master/release-notes.md</ReleaseNotes>
-        <Icon>logo-lazybyte.png</Icon>
+        <Icon>__TemplateIcon.ico</Icon>
         <Tags>WebAPI, OWIN, Autofac, Swagger</Tags>
     </Metadata>
     <Installation>
@@ -17,7 +17,7 @@
         <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
     </Dependencies>
     <Assets>
-        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" d:TargetPath="ProjectTemplates\WebApiStarter.Template.zip" />
+        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="Project" d:ProjectName="WebApiStarter.Template" d:TargetPath="|WebApiStarter.Template;TemplateProjectOutputGroup|" Path="ProjectTemplates" d:VsixSubPath="ProjectTemplates" />
     </Assets>
     <Prerequisites>
         <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />

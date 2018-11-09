@@ -6,7 +6,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using Swashbuckle.Examples;
 
-namespace $safeprojectname$.Controllers
+namespace WebApiStarter.Controllers
 {
     /// <summary>
     /// Represents test controller that should be removed.

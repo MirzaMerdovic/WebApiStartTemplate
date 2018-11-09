@@ -5,7 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http.ExceptionHandling;
 
-namespace $safeprojectname$.App_Start
+namespace WebApiStarter.App_Start
 {
     /// <summary>
     /// Represents implementation of <see cref="ExceptionLogger"/>.

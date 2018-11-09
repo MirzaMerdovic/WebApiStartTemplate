@@ -2,10 +2,10 @@
 using System.Web.Http;
 using Microsoft.Owin;
 using Owin;
-using $safeprojectname$.App_Start;
+using WebApiStarter.App_Start;
 
-[assembly: OwinStartup(typeof($safeprojectname$.Template.Startup))]
-namespace $safeprojectname$.Template
+[assembly: OwinStartup(typeof(WebApiStarter.Template.Startup))]
+namespace WebApiStarter.Template
 {
     /// <summary>
     /// Represents the entry point into an application.
