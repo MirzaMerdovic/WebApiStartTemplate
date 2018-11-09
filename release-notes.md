@@ -21,3 +21,7 @@
 	- Reinstalled nuget packages so that all target .Net 4.7.1
 	- Implemented request/response predefined examples for Swagger using Swashbuckle.Examples
 	- Setup XML documentation usage for Swagger.
+
+## v1.3.0 - November 11th, 2018
+	- Fixed the instal path for the template so not it's nested under: Web -> Previous Versions
+	- Fixed the XML documentation path resolving
